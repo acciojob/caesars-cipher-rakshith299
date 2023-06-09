@@ -58,6 +58,7 @@ function rot13(encodedStr) {
 
    decodedArr.push(resStr);
     //console.log(decodedArr);
+	console.log(resStr);
   return resStr; //return decodedArr
 }
 
