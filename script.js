@@ -43,13 +43,13 @@ function rot13(encodedStr) {
       for(let x in lookup){
         if(x == char){
           flag = true;
-          decodedArr.push(lookup[x]);
+          resStr = resStr + lookup[x];
           //console.log(`inside` + flag );
         }
       }
 
       if(flag == false){
-        decodedArr.push(char);
+        resStr = resStr + char;
       }
 
       //console.log(`outside ` + flag);
@@ -58,7 +58,7 @@ function rot13(encodedStr) {
 
    
     //console.log(decodedArr);
-  return decodedArr; //return decodedArr
+  return resStr; //return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
