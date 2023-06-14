@@ -35,18 +35,28 @@ function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
 
-    let decodedArr = []; // Your Result goes here
-  // Only change code below this line
-	const str = encodedStr;
-	const arr = [];
-	 for(let i = 0;i<str.length;i++){
-		str.charAt(i) = str.charAt(i+13);
-		 arr.push(string[i]);
-	 }
-	  return;
+    for(let i = 0; i < encodedStr.length; i++){
+      let char = encodedStr[i];
+
+      let flag = false;
+      for(let x in lookup){
+        if(x == char){
+          flag = true;
+			decodedArr.push(lookup[x]);
+          //console.log(`inside` + flag );
+        }
+      }
+
+      if(flag == false){
+        decodedArr.push(char);
+      }
+
+      //console.log(`outside ` + flag);
+      
+    }
     //console.log(decodedArr);
 	//console.log(resStr);
-	 //return decodedArr
+  return decodedArr; //return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
